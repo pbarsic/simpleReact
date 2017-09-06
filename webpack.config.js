@@ -5,7 +5,7 @@ var BUILD_DIR = path.resolve(__dirname, "src/client/public");
 var APP_DIR = path.resolve(__dirname, "src/client/app");
 
 var config = {
-  entry: APP_DIR + "/gl-simple.js",
+  entry: APP_DIR + "/hello-gl.js",
   output: {
     path: BUILD_DIR,
     filename: "bundle.js"
@@ -15,8 +15,9 @@ var config = {
     loaders: [
       {
         test: /\.jsx?/,
+        exclude: /node_modules/,
         include: APP_DIR,
-        loader: "babel"
+        loader: "babel-loader"
       }
     ]
   }
